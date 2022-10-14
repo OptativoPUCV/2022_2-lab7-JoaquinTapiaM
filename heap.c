@@ -53,6 +53,7 @@ void heap_push(Heap* pq, void* data, int priority){
       i = (i-1)/2;
     }
     else if(elem.priority < pq->heapArray[(i-1)/2].priority){
+      pq->heapArray[i] = elem;
       break;
     }
   }
