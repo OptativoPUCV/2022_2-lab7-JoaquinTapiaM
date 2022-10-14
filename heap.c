@@ -35,8 +35,8 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
   heapElem elem = (heapElem)calloc(1,sizeof(heapElem));
   
-  elem->data = data;
-  elem->priority = priority;
+  elem.data = data;
+  elem.priority = priority;
   
   if(pq->size == pq->capac){
     pq->capac = pq->capac*2;
