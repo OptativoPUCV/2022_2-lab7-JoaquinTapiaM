@@ -175,3 +175,26 @@ heap.c:52:31: error: incompatible types when assigning to type ‘heapElem’ {a
       |                               ^~~
 Compilation failed
 8a97a24
+Fri 14 Oct 2022 05:18:38 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:43:21: error: expected identifier before numeric constant
+   43 |     pq->capac = pq->2*capac;
+      |                     ^
+heap.c:44:44: error: ‘capacity’ undeclared (first use in this function)
+   44 |     pq->heapArray = realloc(pq->heapArray, capacity);
+      |                                            ^~~~~~~~
+heap.c:44:44: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:46:11: error: ‘size’ undeclared (first use in this function)
+   46 |   int i = size;
+      |           ^~~~
+heap.c:47:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘heapElem *’ {aka ‘struct nodo *’}
+   47 |   pq->heapArray[i] = elem;
+      |                      ^~~~
+heap.c:52:31: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘heapElem *’ {aka ‘struct nodo *’}
+   52 |       pq->heapArray[(i-1)/2]= aux;
+      |                               ^~~
+Compilation failed
+32a943f
