@@ -415,3 +415,16 @@ heap.c:53:17: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka
       |                 ^~
 Compilation failed
 baa6e97
+Fri 14 Oct 2022 05:59:38 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:36:3: error: conversion to non-scalar type requested
+   36 |   heapElem elem = (heapElem)calloc(1,sizeof(heapElem));
+      |   ^~~~~~~~
+heap.c:53:17: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   53 |     else if(elem->priority < pq->heapArray[(i-1)/2].priority){
+      |                 ^~
+Compilation failed
+c6d565a
