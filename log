@@ -2,3 +2,14 @@ Fri 14 Oct 2022 04:45:21 PM UTC:
  tests:  0|4
 total_score: 0/70
 19bff1a
+Fri 14 Oct 2022 04:51:52 PM UTC: 
+ heap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:42:16: error: unused variable ‘array’ [-Werror=unused-variable]
+   42 |     heapElem * array = (heapElem*)calloc(3,sizeof(heapElem)) ;
+      |                ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+72e0642
