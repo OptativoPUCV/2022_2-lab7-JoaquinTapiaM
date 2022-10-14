@@ -40,5 +40,6 @@ Heap* createHeap(){
     heap->capac = 3;
     heap->size = 0;
     heapElem * array = (heapElem*)calloc(3,sizeof(heapElem)) ; 
+    heap->heapArray = array;
    return heap;
 }
