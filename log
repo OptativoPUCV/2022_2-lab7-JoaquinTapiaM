@@ -438,3 +438,9 @@ heap.c:36:3: error: conversion to non-scalar type requested
       |   ^~~~~~~~
 Compilation failed
 765dceb
+Fri 14 Oct 2022 06:00:14 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|2
+total_score: 35/70
+629e142
