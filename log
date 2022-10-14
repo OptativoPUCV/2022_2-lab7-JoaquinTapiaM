@@ -307,3 +307,25 @@ heap.c:50:13: error: incompatible types when assigning to type ‘heapElem’ {a
       |             ^~~~
 Compilation failed
 5cf4241
+Fri 14 Oct 2022 05:57:36 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:36:19: error: invalid initializer
+   36 |   heapElem elem = (heapElem*)calloc(1,sizeof(heapElem));
+      |                   ^
+heap.c:39:7: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   39 |   elem->data = data;
+      |       ^~
+heap.c:40:7: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   40 |   elem->priority = priority;
+      |       ^~
+heap.c:49:12: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   49 |     if(elem->priority > pq->heapArray[(i-1)/2].priority){
+      |            ^~
+heap.c:55:17: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   55 |     else if(elem->priority < pq->heapArray[(i-1)/2].priority){
+      |                 ^~
+Compilation failed
+f377e4d
