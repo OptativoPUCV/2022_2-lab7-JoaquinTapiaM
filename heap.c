@@ -16,9 +16,12 @@ typedef struct Heap{
   int capac;
 } Heap;
 
+//2. Implemente la función `void* heap_top(Heap* pq)`. Esta función retorna el dato con mayor prioridad del montículo. 
+ //   > Recuerde que este dato se encuentra en la raíz el montículo, es decir, en la primera casilla del arreglo.
 
 void* heap_top(Heap* pq){
-    return NULL;
+    heapElem * dato = pq->heapArray[0];
+    return dato->data;
 }
 
 
