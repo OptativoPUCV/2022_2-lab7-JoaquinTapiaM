@@ -128,3 +128,27 @@ heap.c:53:18: error: expected ‘;’ before ‘}’ token
       |     ~             
 Compilation failed
 0ddd512
+Fri 14 Oct 2022 05:17:45 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:42:22: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   42 |   if(pq->size == pq->capacity){
+      |                      ^~~~~~~~
+      |                      capac
+heap.c:43:5: error: ‘capacity’ undeclared (first use in this function)
+   43 |     capacity = 2*capacity;
+      |     ^~~~~~~~
+heap.c:43:5: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:46:11: error: ‘size’ undeclared (first use in this function)
+   46 |   int i = size;
+      |           ^~~~
+heap.c:47:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘heapElem *’ {aka ‘struct nodo *’}
+   47 |   pq->heapArray[i] = elem;
+      |                      ^~~~
+heap.c:52:31: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘heapElem *’ {aka ‘struct nodo *’}
+   52 |       pq->heapArray[(i-1)/2]= aux;
+      |                               ^~~
+Compilation failed
+38c003e

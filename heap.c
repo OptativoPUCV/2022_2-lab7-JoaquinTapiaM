@@ -50,7 +50,7 @@ void heap_push(Heap* pq, void* data, int priority){
       aux = elem;
       pq->heapArray[i] = pq->heapArray[(i-1)/2];
       pq->heapArray[(i-1)/2]= aux;
-      i = (i-1)/2
+      i = (i-1)/2;
     }
     else if(elem->priority < pq->heapArray[(i-1)/2].priority){
       break;
