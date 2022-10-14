@@ -27,10 +27,36 @@ void* heap_top(Heap* pq){
     return dato[0].data;
 }
 
+//3. Implemente la función `void heap_push(Heap* pq, void* data, int p)`. Esta función inserta un nuevo dato con prioridad `p` en el montículo. Si no recuerda como insertar datos en el montículo puede ver las [diapositivas](https://docs.google.com/presentation/d/1ZjXWMf6g05WdICqvno_oyRvorjAThABgbRGbEqc7mYU/edit#slide=id.g55ac49ed61_0_167).
 
+ //   > Si el arreglo está lleno aumente la capacidad al **doble + 1** usando la función `realloc` así:
+   // > `arreglo = realloc(arreglo, nueva_capacidad)`
 
 void heap_push(Heap* pq, void* data, int priority){
-
+  heapElem * elem = (heapElem*)calloc(1,sizeof(heapElem));
+  heapElem * aux;
+  
+  elem->data = data;
+  elem->priority = priority;
+  
+  if(pq->size == pq->capacity){
+    capacity = 2*capacity;
+    pq->heapArray = realloc(pq->heapArray, capacity);
+    }
+  int i = size;
+  pq->heapArray[i] = elem;
+  while (i!=0){
+    if(elem->priority > pq->heapArray[(i-1)/2].priority){
+      aux = elem;
+      pq->heapArray[i] = pq->heapArray[(i-1)/2];
+      pq->heapArray[(i-1)/2]= aux;
+      i = (i-1)/2
+    }
+    else if(elem->priority < pq->heapArray[(i-1)/2].priority){
+      break;
+    }
+  }
+  size++;
 }
 
 
