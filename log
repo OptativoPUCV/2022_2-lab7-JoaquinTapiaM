@@ -727,3 +727,16 @@ heap.c:89:22: error: expected ‘;’ before ‘}’ token
       |         ~             
 Compilation failed
 28945fb
+Sat 15 Oct 2022 06:49:06 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:89:22: error: expected ‘;’ before ‘}’ token
+   89 |           j = (2*i)+1
+      |                      ^
+      |                      ;
+   90 |         }
+      |         ~             
+Compilation failed
+2c61c3d
