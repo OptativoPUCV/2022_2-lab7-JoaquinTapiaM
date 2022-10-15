@@ -78,6 +78,7 @@ void heap_pop(Heap* pq){
   pq->heapArray[0]=pq->heapArray[pq->size];
   int i = 0;
   int j = 1;
+  printf("si\n");
   //si no tiene hijos se saldra del while
   while (j < pq->size){
     printf("si\n");
