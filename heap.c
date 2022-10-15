@@ -78,10 +78,9 @@ void heap_pop(Heap* pq){
   pq->heapArray[0]=pq->heapArray[pq->size];
   int i = 0;
   int j = 1;
-  printf("si\n");
   //si no tiene hijos se saldra del while
   while (j < pq->size){
-    printf("si\n");
+    printf("si %d\n",j);
     //caso que tenga 2 nodos hijos
     if(j+1 < pq->size){
       //al menos uno de los 2 hijos tiene mayor prioridad que el i 
