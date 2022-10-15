@@ -83,23 +83,23 @@ void heap_pop(Heap* pq){
     
     //caso que tenga 2 nodos hijos
     if(j+1 < pq->size){
-      printf("si %d\n",j);
+      //printf("si %d\n",j);
       //al menos uno de los 2 hijos tiene mayor prioridad que el i 
       if(pq->heapArray[i].priority<pq->heapArray[j].priority ||pq->heapArray[i].priority<pq->heapArray[j+1].priority){
         //caso que j sea mayor que j+1
         if(pq->heapArray[j+1].priority < pq->heapArray[j].priority){
           aux = pq->heapArray[j];
           pq->heapArray[j] = pq->heapArray[i];
-          pq->heapArray[j] = aux;
+          pq->heapArray[i] = aux;
           i = j;
           j = (2*i)+1;
         }
         //caso que j+1 sea mayor que j
         if(pq->heapArray[j+1].priority > pq->heapArray[j].priority){
-          printf("si %d\n",j);
+          //printf("si %d\n",j);
           aux = pq->heapArray[j+1];
           pq->heapArray[j+1] = pq->heapArray[i];
-          pq->heapArray[j+1] = aux;
+          pq->heapArray[i] = aux;
           i = j+1;
           j = (2*i)+1;
         }
@@ -113,7 +113,7 @@ void heap_pop(Heap* pq){
       if(pq->heapArray[i].priority < pq->heapArray[j].priority){
           aux = pq->heapArray[j];
           pq->heapArray[j] = pq->heapArray[i];
-          pq->heapArray[j] = aux;
+          pq->heapArray[i] = aux;
           i = j;
           j = (2*i)+1;
       }
