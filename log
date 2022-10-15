@@ -546,3 +546,44 @@ heap.c:74:12: error: unused variable ‘aux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 66071f2
+Sat 15 Oct 2022 06:46:21 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:81:12: error: ‘size’ undeclared (first use in this function)
+   81 |   while (j<size){
+      |            ^~~~
+heap.c:81:12: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:82:24: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   82 |     if(pq->heapArray[i]<pq->heapArray[j]){
+      |        ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+      |                     |                |
+      |                     |                heapElem {aka struct nodo}
+      |                     heapElem {aka struct nodo}
+heap.c:83:26: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   83 |       if(pq->heapArray[i]<pq->heapArray[j+1] && j+1<size){
+      |          ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+      |                       |                |
+      |                       |                heapElem {aka struct nodo}
+      |                       heapElem {aka struct nodo}
+heap.c:84:28: error: invalid operands to binary > (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   84 |         if(pq->heapArray[j]>pq->heapArray[j+1]){
+      |            ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+      |                         |                |
+      |                         |                heapElem {aka struct nodo}
+      |                         heapElem {aka struct nodo}
+heap.c:89:22: error: expected ‘;’ before ‘}’ token
+   89 |           j = (2*i)+1
+      |                      ^
+      |                      ;
+   90 |         }
+      |         ~             
+heap.c:91:28: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   91 |         if(pq->heapArray[j]<pq->heapArray[j+1]){
+      |            ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+      |                         |                |
+      |                         |                heapElem {aka struct nodo}
+      |                         heapElem {aka struct nodo}
+Compilation failed
+43c1cac

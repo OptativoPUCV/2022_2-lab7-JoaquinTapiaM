@@ -75,10 +75,10 @@ void heap_pop(Heap* pq){
   if(pq->size==0){
     return;
   }
-  pq->heapArray[0]=pq->heapArray[size];
+  pq->heapArray[0]=pq->heapArray[pq->size];
   int i = 0;
   int j = 1;
-  while ((j<size){
+  while (j<size){
     if(pq->heapArray[i]<pq->heapArray[j]){
       if(pq->heapArray[i]<pq->heapArray[j+1] && j+1<size){
         if(pq->heapArray[j]>pq->heapArray[j+1]){
