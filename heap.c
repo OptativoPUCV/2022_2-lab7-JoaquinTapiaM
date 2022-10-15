@@ -78,25 +78,43 @@ void heap_pop(Heap* pq){
   pq->heapArray[0]=pq->heapArray[pq->size];
   int i = 0;
   int j = 1;
-  while (j<pq->size){
-    if(pq->heapArray[i].priority<pq->heapArray[j].priority){
-      if(pq->heapArray[i].priority<pq->heapArray[j+1].priority && j+1<pq->size){
-        if(pq->heapArray[j].priority>pq->heapArray[j+1].priority){
-          aux = pq->heapArray[j];
-          pq->heapArray[j] = pq->heapArray[i];
-          pq->heapArray[i] = aux;
-          i = j;
-          j = (2*i)+1
-        }
-        if(pq->heapArray[j].priority<pq->heapArray[j+1].priority){
-          aux = pq->heapArray[j+1];
-          pq->heapArray[j+1] = pq->heapArray[i];
-          pq->heapArray[i] = aux;
+  //si no tiene hijos se saldra del while
+  while (j < pq->size){
+    //caso que tenga 2 nodos hijos
+    if(j+1 < pq->size){
+      //al menos uno de los 2 hijos tiene mayor prioridad que el i 
+      if(pq->heapArray[i].priority<pq->heapArray[j].priority ||pq->heapArray[i].priority<pq->heapArray[j+1].priority){
+        //caso que j sea mayor que j+1
+        if(pq->heapArray[j+1].priority < pq->heapArray[j].priority){
+          aux = heapArray[j];
+          heapArray[j] = heapArray[i];
+          heapArray[j] = aux;
           i = j;
           j = (2*i)+1;
         }
+        //caso que j+1 sea mayor que j
+        if(pq->heapArray[j+1].priority > pq->heapArray[j].priority){
+          aux = heapArray[j+1];
+          heapArray[j+1] = heapArray[i];
+          heapArray[j+1] = aux;
+          i = j+1;
+          j = (2*i)+1;
+        }
       }
-      
+      else{
+        break;
+      }
+    }
+    //caso que solo tenga el primer hijo
+    else{
+      if(pq->heapArray[i].priority < pq->heapArray[j].priority){
+        aux = heapArray[j];
+          heapArray[j] = heapArray[i];
+          heapArray[j] = aux;
+          i = j;
+          j = (2*i)+1;
+      }
+      break;
     }
   }
 }

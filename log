@@ -740,3 +740,14 @@ heap.c:89:22: error: expected ‘;’ before ‘}’ token
       |         ~             
 Compilation failed
 2c61c3d
+Sat 15 Oct 2022 08:51:46 PM UTC: 
+ heap.c | 44 +++++++++++++++++++++++++++++++-------------
+ 1 file changed, 31 insertions(+), 13 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:89:17: error: ‘heapArray’ undeclared (first use in this function)
+   89 |           aux = heapArray[j];
+      |                 ^~~~~~~~~
+heap.c:89:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+c17d7e6
