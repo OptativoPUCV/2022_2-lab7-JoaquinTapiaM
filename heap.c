@@ -75,6 +75,10 @@ void heap_pop(Heap* pq){
   if(pq->size==0){
     return;
   }
+  if(pq->size == 1){
+    pq->heapArray[0]=pq->heapArray[pq->size];
+    return;
+  }
   pq->heapArray[0]=pq->heapArray[pq->size];
   int i = 0;
   int j = 1;
