@@ -628,3 +628,44 @@ heap.c:91:28: error: invalid operands to binary < (have ‘heapElem’ {aka ‘s
       |                         heapElem {aka struct nodo}
 Compilation failed
 1de860a
+Sat 15 Oct 2022 06:47:57 PM UTC: 
+ heap.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:80:24: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   80 |     if(pq->heapArray[i]<pq->heapArray[j]){
+      |        ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+      |                     |                |
+      |                     |                heapElem {aka struct nodo}
+      |                     heapElem {aka struct nodo}
+heap.c:81:26: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   81 |       if(pq->heapArray[i]<pq->heapArray[j+1] && j+1<size){
+      |          ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+      |                       |                |
+      |                       |                heapElem {aka struct nodo}
+      |                       heapElem {aka struct nodo}
+heap.c:81:53: error: ‘size’ undeclared (first use in this function)
+   81 |       if(pq->heapArray[i]<pq->heapArray[j+1] && j+1<size){
+      |                                                     ^~~~
+heap.c:81:53: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:82:28: error: invalid operands to binary > (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   82 |         if(pq->heapArray[j]>pq->heapArray[j+1]){
+      |            ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+      |                         |                |
+      |                         |                heapElem {aka struct nodo}
+      |                         heapElem {aka struct nodo}
+heap.c:87:22: error: expected ‘;’ before ‘}’ token
+   87 |           j = (2*i)+1
+      |                      ^
+      |                      ;
+   88 |         }
+      |         ~             
+heap.c:89:28: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   89 |         if(pq->heapArray[j]<pq->heapArray[j+1]){
+      |            ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+      |                         |                |
+      |                         |                heapElem {aka struct nodo}
+      |                         heapElem {aka struct nodo}
+Compilation failed
+63462d0
