@@ -710,3 +710,20 @@ heap.c:91:28: error: invalid operands to binary < (have ‘heapElem’ {aka ‘s
       |                         heapElem {aka struct nodo}
 Compilation failed
 d02b68f
+Sat 15 Oct 2022 06:48:48 PM UTC: 
+ heap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:83:71: error: ‘size’ undeclared (first use in this function)
+   83 |       if(pq->heapArray[i].priority<pq->heapArray[j+1].priority && j+1<size){
+      |                                                                       ^~~~
+heap.c:83:71: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:89:22: error: expected ‘;’ before ‘}’ token
+   89 |           j = (2*i)+1
+      |                      ^
+      |                      ;
+   90 |         }
+      |         ~             
+Compilation failed
+28945fb
