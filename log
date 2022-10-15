@@ -751,3 +751,9 @@ heap.c:89:17: error: ‘heapArray’ undeclared (first use in this function)
 heap.c:89:17: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 c17d7e6
+Sat 15 Oct 2022 08:52:29 PM UTC: 
+ heap.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+ tests:  7|1
+total_score: 45/70
+231942a

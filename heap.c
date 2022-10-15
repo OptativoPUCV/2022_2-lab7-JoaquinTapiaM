@@ -86,17 +86,17 @@ void heap_pop(Heap* pq){
       if(pq->heapArray[i].priority<pq->heapArray[j].priority ||pq->heapArray[i].priority<pq->heapArray[j+1].priority){
         //caso que j sea mayor que j+1
         if(pq->heapArray[j+1].priority < pq->heapArray[j].priority){
-          aux = heapArray[j];
-          heapArray[j] = heapArray[i];
-          heapArray[j] = aux;
+          aux = pq->heapArray[j];
+          pq->heapArray[j] = pq->heapArray[i];
+          pq->heapArray[j] = aux;
           i = j;
           j = (2*i)+1;
         }
         //caso que j+1 sea mayor que j
         if(pq->heapArray[j+1].priority > pq->heapArray[j].priority){
-          aux = heapArray[j+1];
-          heapArray[j+1] = heapArray[i];
-          heapArray[j+1] = aux;
+          aux = pq->heapArray[j+1];
+          pq->heapArray[j+1] = pq->heapArray[i];
+          pq->heapArray[j+1] = aux;
           i = j+1;
           j = (2*i)+1;
         }
@@ -108,9 +108,9 @@ void heap_pop(Heap* pq){
     //caso que solo tenga el primer hijo
     else{
       if(pq->heapArray[i].priority < pq->heapArray[j].priority){
-        aux = heapArray[j];
-          heapArray[j] = heapArray[i];
-          heapArray[j] = aux;
+          aux = pq->heapArray[j];
+          pq->heapArray[j] = pq->heapArray[i];
+          pq->heapArray[j] = aux;
           i = j;
           j = (2*i)+1;
       }
