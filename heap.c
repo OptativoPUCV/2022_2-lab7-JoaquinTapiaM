@@ -77,7 +77,7 @@ void heap_pop(Heap* pq){
   }
   if(pq->size == 1){
     pq->heapArray[0]=pq->heapArray[pq->size];
-    printf("aca si  %d\n",pq->heapArray[0].priority);
+    printf("aca si  %d\n",pq->heapArray[1].priority);
     return;
   }
   pq->heapArray[0]=pq->heapArray[pq->size];
