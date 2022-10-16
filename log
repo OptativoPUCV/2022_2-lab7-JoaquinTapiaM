@@ -896,3 +896,9 @@ heap.c:129:3: note: previous implicit declaration of ‘view_array’ was here
 cc1: all warnings being treated as errors
 Compilation failed
 2a7e914
+Sun 16 Oct 2022 04:34:06 PM UTC: 
+ heap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  7|1
+total_score: 60/70
+ee944fb
