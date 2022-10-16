@@ -126,6 +126,7 @@ void heap_pop(Heap* pq){
     }
   }
   printf("si %d\n",pq->heapArray[0].priority);
+  view_array(pq);
 }
 
 //1. Implemente la función `Heap* createHeap()`. Esta función crea un nuevo dato de tipo Heap inicializando sus variables. Considere que la capacidad incial es de 3 casillas para el arreglo.
