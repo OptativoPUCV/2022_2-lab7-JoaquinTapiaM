@@ -100,7 +100,7 @@ void heap_pop(Heap* pq){
           j = (2*i)+1;
         }
         //caso que j+1 sea mayor que j
-        if(pq->heapArray[j+1].priority > pq->heapArray[j].priority){
+        else if(pq->heapArray[j+1].priority > pq->heapArray[j].priority){
           //printf("si %d\n",j);
           aux = pq->heapArray[j+1];
           pq->heapArray[j+1] = pq->heapArray[i];
