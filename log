@@ -877,3 +877,22 @@ heap.c:129:3: note: previous implicit declaration of ‘view_array’ was here
 cc1: all warnings being treated as errors
 Compilation failed
 43bbea6
+Sun 16 Oct 2022 04:33:36 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:129:3: error: implicit declaration of function ‘view_array’ [-Werror=implicit-function-declaration]
+  129 |   view_array(pq);
+      |   ^~~~~~~~~~
+test.c: At top level:
+test.c:55:6: error: conflicting types for ‘view_array’ [-Werror]
+   55 | void view_array(Heap* h){
+      |      ^~~~~~~~~~
+In file included from test.c:4:
+heap.c:129:3: note: previous implicit declaration of ‘view_array’ was here
+  129 |   view_array(pq);
+      |   ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2a7e914
